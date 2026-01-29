@@ -1,16 +1,16 @@
-import React, { Children } from "react";
-import Navbar from "./Navbar";
-import Gallery from "./Gallery";
+import React from "react";
+import Header from "./Header";
+import Carousell from "./Carousell";
+import Footer from "./Footer";
 
-function Layout() {
+const Layout = ({ children }) => {
   return (
-    <>
-      <Navbar />
-
-      {Children ? Children : <Gallery/> }
+    <div>
+      <Header />
+      {children ? children : <Carousell />}
       <Footer />
-    </>
+    </div>
   );
-}
+};
 
 export default Layout;
