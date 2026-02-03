@@ -1,15 +1,18 @@
-import React from "react";
-import Header from "./Header";
-import Carousell from "./Carousell";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
-    <div>
-      <Header />
-      {children ? children : <Carousell />}
+    <>
+      <Navbar />
+
+      <div style={{ padding: "40px", textAlign: "center" }}>
+        <Outlet />
+      </div>
+
       <Footer />
-    </div>
+    </>
   );
 };
 
